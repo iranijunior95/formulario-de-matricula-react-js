@@ -1,3 +1,95 @@
 .home {
-    background: var(--color-brand-light);
+    width: 100%;
+    min-height: 100vh;
+    background: var(--color-surface-secondary);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.home-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.header-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-cabecalho > img {
+    width: 32px;
+    height: 32px;
+    object-fit: fill;
+}
+
+.header-cabecalho > span {
+    font-family: "Schoolbell", cursive;
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+}
+
+.home-header > h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+}
+
+.home-header > h1 > span {
+    color: var(--color-brand-dark);
+}
+
+.home-header > h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+}
+
+.home-main-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-main-img > img {
+    width: 496px;
+    height: 368px;
+    object-fit: fill;
+}
+
+.home .btn-default {
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--color-brand-dark);
+    border: 1px solid var(--color-brand-dark);
+    transition: .3s;
+}
+
+.home .btn-default:hover {
+    color: var(--color-surface-primary);
+    border: 1px solid var(--color-surface-primary);
+    background: var(--color-brand-dark);
+}
+
+@media screen and (max-width: 610px) {
+    .home {
+        padding: 4rem 2rem;
+        overflow: hidden;
+    }
+
+    .home-header > h1 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .home-header > h2 {
+        text-align: center;
+    }
 }
