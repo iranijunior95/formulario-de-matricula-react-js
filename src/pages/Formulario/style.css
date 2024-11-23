@@ -1,0 +1,139 @@
+.formulario {
+    width: 80%;
+    min-height: 100vh;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.formulario-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formulario-link-voltar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+}
+
+.formulario-link-voltar > img {
+    width: 24px;
+    height: 24px;
+    object-fit: fill;
+}
+
+.formulario-titulos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formulario-titulos > h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.formulario-titulos > h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+}
+
+.formulario-info-crianca {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.fomulario-group-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.fomulario-group-form > label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.fomulario-group-form > select {
+    appearance: none;
+    background: url('../../assets/img/arrow-down-01.svg') no-repeat var(--color-surface-primary);
+    background-position: calc(100% - 16px) center;
+    padding: 12px 16px;
+    border: 1px solid var(--color-stroke-default);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    outline: none;
+    cursor: pointer;
+}
+
+.fomulario-group-form > select:focus {
+    border: 1px solid var(--color-stroke-highlight);
+    box-shadow: 0px 0px 4px 3px rgb(254, 231, 214);
+}
+
+.fomulario-group-form > select > option {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    font-weight: 400;
+}
+
+.fomulario-group-form > textarea {
+    background: var(--color-surface-primary);
+    padding: 12px 16px;
+    border: 1px solid var(--color-stroke-default);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    outline: none;
+}
+
+.fomulario-group-form > textarea:focus {
+    border: 1px solid var(--color-stroke-highlight);
+    box-shadow: 0px 0px 4px 3px rgb(254, 231, 214);
+}
+
+.span-input-file {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.label-input-file {
+    height: 160px;
+    padding: 24px 16px;
+    border: 1px dashed var(--color-stroke-default);
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('../../assets/img/cloud-upload.svg') no-repeat;
+    background-position: center 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-input-file::after {
+    content: 'Clique aqui para selecionar arquivos';
+    margin-top: calc(84px - 24px);
+    font-size: 1rem;
+    font-weight: 400;
+    color: #A8A29E;
+    max-width: 20ch;
+    text-align: center;
+}
+
+.input-file {
+    display: none;
+}
