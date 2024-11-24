@@ -59,8 +59,58 @@ function Formulario() {
 
             <section className='formulario-endereco-residencial'>
                 <SubtituloH3>Endereço residencial</SubtituloH3>
+
+                <div className='fomulario-group-form'>
+                    <label htmlFor="cep">CEP</label>
+                    <GroupInput
+                        nameInput="cep" 
+                        inputType="text"
+                    />
+                </div>
+
+                <div className='div-formulario-endereco'>
+                    <div className='fomulario-group-form'>
+                        <label htmlFor="rua">Rua</label>
+                        <GroupInput
+                            nameInput="rua" 
+                            inputType="text"
+                            disabled="disabled"
+                        />
+                    </div>
+
+                    <div className='fomulario-group-form'>
+                        <label htmlFor="cep">Número</label>
+                        <GroupInput
+                            nameInput="numero" 
+                            inputType="text"
+                        />
+                    </div>
+                </div>
+
+                <div className='div-formulario-endereco'>
+                    <div className='fomulario-group-form'>
+                        <label htmlFor="cidade">Cidade</label>
+                        <GroupInput
+                            nameInput="cidade" 
+                            inputType="text"
+                            disabled="disabled"
+                        />
+                    </div>
+
+                    <div className='fomulario-group-form'>
+                        <label htmlFor="estado">Estado</label>
+                        <GroupInput
+                            nameInput="estado" 
+                            inputType="text"
+                            disabled="disabled"
+                        />
+                    </div>
+                </div>
             </section>
             
+            <section className='formulario-endereco-residencial'>
+                <SubtituloH3>Informações do responsável</SubtituloH3>
+            </section>
         </div>
     );
 }

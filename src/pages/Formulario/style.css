@@ -137,3 +137,19 @@
 .input-file {
     display: none;
 }
+
+.formulario-endereco-residencial {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.div-formulario-endereco {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.div-formulario-endereco > div:nth-child(2) {
+    width: 20%;
+}
