@@ -2,6 +2,8 @@ import { NavLink } from 'react-router';
 import ArrowLeft02 from '../../assets/img/arrow-left-02.svg';
 import SubtituloH3 from '../../components/SubtituloH3';
 import GroupInput from '../../components/GroupInput';
+import CardsTurnos from '../../components/CardsTurnos';
+import CardsEsportes from '../../components/CardsEsportes';
 import './style.css';
 
 function Formulario() {
@@ -108,8 +110,46 @@ function Formulario() {
                 </div>
             </section>
             
-            <section className='formulario-endereco-residencial'>
+            <section className='formulario-informacoes-responsavel'>
                 <SubtituloH3>Informações do responsável</SubtituloH3>
+
+                <div className='fomulario-group-form'>
+                    <label htmlFor="nomeResponsavel">Nome do responsável</label>
+                    <GroupInput
+                        nameInput="nomeResponsavel" 
+                        inputType="text"
+                    />
+                    <span className='span-info-formulario'>Principal responsável legal e contato de emergência</span>
+                </div>
+
+                <div className='fomulario-group-form'>
+                    <label htmlFor="telefone">Telefone</label>
+                    <GroupInput
+                        nameInput="telefone" 
+                        inputType="text"
+                    />
+                </div>
+
+                <div className='fomulario-group-form'>
+                    <label htmlFor="email">E-mail</label>
+                    <GroupInput
+                        nameInput="email" 
+                        inputType="text"
+                    />
+                </div>
+            </section>
+
+            <section className='formulario-opcoes-matricula'>
+                <SubtituloH3>Opções de matrícula</SubtituloH3>
+                <div className='fomulario-group-form-cards'>
+                    <label htmlFor="turno">Selecione o turno de estudo</label>
+                    <CardsTurnos />
+                </div>
+
+                <div className='fomulario-group-form-cards'>
+                    <label htmlFor="esporte">Em qual esporte você gostaria de inscrever seu filho?</label>
+                    <CardsEsportes />
+                </div>
             </section>
         </div>
     );

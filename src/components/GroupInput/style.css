@@ -16,3 +16,11 @@ input:focus {
 .disabled-input {
     background: var(--color-surface-disabled);
 }
+
+.error-input {
+    border: 2px solid var(--color-semantic-error);
+}
+
+.error-input:focus {
+    border: 2px solid var(--color-semantic-error);
+}
