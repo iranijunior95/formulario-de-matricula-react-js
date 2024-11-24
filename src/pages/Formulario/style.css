@@ -183,3 +183,44 @@
     color: var(--color-text-secondary);
     font-weight: 500;
 }
+
+.check-termos-servicos {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    position: relative;
+}
+
+.check-termos-servicos > input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.check-termos-servicos .checkbox {
+    min-width: 24px;
+    height: 24px;
+    background: url('../../assets/img/square.svg') no-repeat;
+}
+
+.check-termos-servicos > input:hover + .checkbox {
+    background: url('../../assets/img/square-hover.svg') no-repeat;
+}
+
+.check-termos-servicos > input:checked + .checkbox {
+    background: url('../../assets/img/checkmark-square-01.svg') no-repeat;
+}
+
+.check-termos-servicos > label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+}
+
+.check-termos-servicos > label > span {
+    color: var(--color-brand-dark);
+    font-weight: 500;
+}
