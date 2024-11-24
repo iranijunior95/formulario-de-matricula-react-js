@@ -157,6 +157,11 @@ function Formulario() {
                 <div className='checkbox'></div>
                 <label htmlFor="termosUso">Declaro que li e concordo com os <span>Termos e Condições</span> e com a <span>Política de Privacidade</span> da escola Estrela do Amanhã.</label>
             </section>
+
+            <section className='formulario-buttons'>
+                <button type="button" className='btn-default btn-salvar'>Salvar respostas</button>
+                <button type="button" className='btn-default btn-matricula'>Fazer matrícula</button>
+            </section>
         </div>
     );
 }

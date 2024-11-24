@@ -224,3 +224,36 @@
     color: var(--color-brand-dark);
     font-weight: 500;
 }
+
+.formulario-buttons {
+    width: 100%;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.formulario-buttons .btn-default {
+    cursor: pointer;
+}
+
+.btn-salvar {
+    border: 1px solid var(--color-text-highlight);
+    color: var(--color-text-highlight);
+    background: var(--color-surface-primary);
+}
+
+.btn-salvar:hover {
+    box-shadow: 0px 0px 4px 3px rgb(254, 231, 214);
+}
+
+.btn-matricula {
+    border: 1px solid var(--color-text-highlight);
+    background: var(--color-text-highlight) !important;
+    color: var(--color-surface-primary);
+}
+
+.btn-matricula:hover {
+    border: 1px solid var(--color-brand-mid);
+    background: var(--color-brand-mid) !important;
+}
