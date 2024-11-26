@@ -4,11 +4,15 @@ import Natacao from '../../assets/img/swimming.svg';
 import Yoga from '../../assets/img/yoga-02.svg';
 import Volley from '../../assets/img/volleyball.svg';
 import Boxe from '../../assets/img/boxing-glove-01.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './style.css';
 
-function CardsEsportes() {
+function CardsEsportes(props) {
     const [esportes, setEsportes] = useState('futebol');
+
+    useEffect(() => {
+        props.recebeEsporte(esportes);
+    }, [esportes]);
 
     return (
         <div className='radio-cards-esportes'>

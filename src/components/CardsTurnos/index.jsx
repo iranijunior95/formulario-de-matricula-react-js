@@ -3,7 +3,7 @@ import Sun02 from '../../assets/img/sun-02.svg';
 import { useState } from 'react';
 import './style.css';
 
-function CardsTurnos() {
+function CardsTurnos(props) {
     const [radio, setRadio] = useState('manha');
 
     return (
@@ -15,7 +15,10 @@ function CardsTurnos() {
                     id="manha"
                     value="manha"
                     checked={radio === 'manha'}
-                    onChange={(event) => setRadio(event.target.value)} 
+                    onChange={(event) => {
+                        setRadio(event.target.value);
+                        props.recebeTurno(event.target.value);
+                    }} 
                 />
 
                 <div className='card-turno'>
@@ -32,7 +35,10 @@ function CardsTurnos() {
                     id="tarde"
                     value="tarde"
                     checked={radio === 'tarde'}
-                    onChange={(event) => setRadio(event.target.value)} 
+                    onChange={(event) => {
+                        setRadio(event.target.value);
+                        props.recebeTurno(event.target.value);
+                    }}  
                 />
 
                 <div className='card-turno'>

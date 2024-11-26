@@ -74,3 +74,9 @@
 .card-esportes-content > input:checked + .card-esporte .radio-esporte {
     background: url('../../assets/img/checkmark-circle-01.svg') no-repeat;
 }
+
+@media screen and (max-width: 395px) {
+    .card-esportes-content {
+        width: calc(50% - 1rem)
+    }
+}

@@ -35,6 +35,8 @@ function Inputs(props) {
                         id={props.labelForInputNameId}
                         placeholder={props.placeholder ? props.placeholder : ''}
                         disabled={props.disabled ? true : false}
+                        value={props.value}
+                        onChange={props.onChange}
                     />
                     {validSpanMenssagem(props.error, props.message)}
                 </div> 
@@ -49,6 +51,8 @@ function Inputs(props) {
                         name={props.labelForInputNameId} 
                         id={props.labelForInputNameId}
                         disabled={props.disabled ? true : false}
+                        value={props.value}
+                        onChange={props.onChange}
                     />
                     {validSpanMenssagem(props.error, props.message)}
                 </div> 
@@ -63,6 +67,8 @@ function Inputs(props) {
                         id={props.labelForInputNameId}
                         rows="4" 
                         cols="50"
+                        value={props.value}
+                        onChange={props.onChange}
                     ></textarea>
                 </div>
             );
@@ -77,7 +83,10 @@ function Inputs(props) {
                         name={props.labelForInputNameId} 
                         id={props.labelForInputNameId} 
                         className='input-file'
-                        onChange={(event) => setDescricaoFile(event.target.files[0].name)} 
+                        onChange={(event) => {
+                            setDescricaoFile(event.target.files[0].name);
+                            props.recebeCaminhoDocumento(event.target.files[0]);
+                        }} 
                     />
                     
                     {descricaoFile === '' ? '' : <span className='input-file-descricao'><img src={IconFile} alt='file descriptio'/>{descricaoFile}</span>}
@@ -91,6 +100,8 @@ function Inputs(props) {
                     <select 
                         name={props.labelForInputNameId}
                         id={props.labelForInputNameId}
+                        value={props.value}
+                        onChange={props.onChange}
                     >
                         {props.options.map((opt) => {
                             return(

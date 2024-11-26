@@ -149,3 +149,42 @@
     border: 1px solid var(--color-brand-mid);
     background: var(--color-brand-mid) !important;
 }
+
+@media screen and (max-width: 940px) {
+    .formulario {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .formulario {
+        width: 100%;
+    }
+
+    .formulario-section-inline {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .formulario-section-inline > div:nth-child(2) {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .check-termos-servicos > label {
+        text-align: justify;
+    }
+
+    .formulario-buttons {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formulario-buttons .btn-default {
+        width: 90%;
+    }
+}
+
