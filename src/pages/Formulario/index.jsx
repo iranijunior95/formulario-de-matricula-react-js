@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router';
 import ArrowLeft02 from '../../assets/img/arrow-left-02.svg';
 import SubtituloH3 from '../../components/SubtituloH3';
-import GroupInput from '../../components/GroupInput';
 import CardsTurnos from '../../components/CardsTurnos';
 import CardsEsportes from '../../components/CardsEsportes';
+import Inputs from '../../components/Inputs';
 import './style.css';
 
 function Formulario() {
@@ -20,126 +20,120 @@ function Formulario() {
                 </div>
             </section>
 
-            <section className='formulario-info-crianca'>
+            <section className='formulario-section'>
                 <SubtituloH3>Informações da criança</SubtituloH3>
 
-                <div className='fomulario-group-form'>
-                    <label htmlFor="nomeCompleto">Nome completo</label>
-                    <GroupInput
-                        nameInput="nomeCompleto" 
-                        inputType="text"
-                    />
-                </div>
-                
-                <div className='fomulario-group-form'>
-                    <label htmlFor="dataNascimento">Data de nascimento</label>
-                    <GroupInput
-                        nameInput="dataNascimento" 
-                        inputType="text"
-                    />
-                </div>
+                <Inputs
+                    labelForInputNameId="nome"
+                    label="Nome completo" 
+                    type="text"
+                    placeholder="Digíte o nome completo"
+                />
 
-                <div className='fomulario-group-form'>
-                    <label htmlFor="sexo">Sexo</label>
-                    <select name="sexo" id="sexo">
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                    </select>
-                </div>
+                <Inputs
+                    labelForInputNameId="dataNascimento"
+                    label="Data de nascimento" 
+                    type="date"
+                />
 
-                <div className='fomulario-group-form'>
-                    <label htmlFor="infoMedica">Informações médicas</label>
-                    <textarea name="infoMedicas" id="infoMedicas" rows="4" cols="50"></textarea>
-                </div>
+                <Inputs
+                    labelForInputNameId="sexo"
+                    label="Sexo" 
+                    type="select"
+                    options={[
+                        {
+                            value: 'masculino',
+                            option: 'Masculino'
+                        },
+                        {
+                            value: 'feminino',
+                            option: 'Feminino'
+                        }
+                    ]}
+                />
 
-                <div className='fomulario-group-form'>
-                    <span className='span-input-file'>Certidão de nascimento</span>
-                    <label htmlFor="certidaoNascimento" className='label-input-file'></label>
-                    <input type="file" name="certidaoNascimento" id="certidaoNascimento" className='input-file' />
-                </div>
+                <Inputs
+                    labelForInputNameId="infoMedica"
+                    label="Informações médicas" 
+                    type="textarea"
+                />
+
+                <Inputs
+                    labelForInputNameId="certidaoNascimento"
+                    label="Certidão de nascimento" 
+                    type="file"
+                />  
             </section>
 
-            <section className='formulario-endereco-residencial'>
+            <section className='formulario-section'>
                 <SubtituloH3>Endereço residencial</SubtituloH3>
 
-                <div className='fomulario-group-form'>
-                    <label htmlFor="cep">CEP</label>
-                    <GroupInput
-                        nameInput="cep" 
-                        inputType="text"
+                <Inputs
+                    labelForInputNameId="cep"
+                    label="CEP" 
+                    type="text"
+                    placeholder="Digite o cep da sua região..."
+                />
+
+                <div className='formulario-section-inline'>
+                    <Inputs
+                        labelForInputNameId="rua"
+                        label="Rua" 
+                        type="text"
+                        placeholder="Digite o nome da sua rua..."
+                    />
+
+                    <Inputs
+                        labelForInputNameId="numero"
+                        label="Número" 
+                        type="text"
                     />
                 </div>
 
-                <div className='div-formulario-endereco'>
-                    <div className='fomulario-group-form'>
-                        <label htmlFor="rua">Rua</label>
-                        <GroupInput
-                            nameInput="rua" 
-                            inputType="text"
-                            disabled="disabled"
-                        />
-                    </div>
+                <div className='formulario-section-inline'>
+                    <Inputs
+                        labelForInputNameId="cidade"
+                        label="Cidade" 
+                        type="text"
+                        disabled
+                    />
 
-                    <div className='fomulario-group-form'>
-                        <label htmlFor="cep">Número</label>
-                        <GroupInput
-                            nameInput="numero" 
-                            inputType="text"
-                        />
-                    </div>
-                </div>
-
-                <div className='div-formulario-endereco'>
-                    <div className='fomulario-group-form'>
-                        <label htmlFor="cidade">Cidade</label>
-                        <GroupInput
-                            nameInput="cidade" 
-                            inputType="text"
-                            disabled="disabled"
-                        />
-                    </div>
-
-                    <div className='fomulario-group-form'>
-                        <label htmlFor="estado">Estado</label>
-                        <GroupInput
-                            nameInput="estado" 
-                            inputType="text"
-                            disabled="disabled"
-                        />
-                    </div>
+                    <Inputs
+                        labelForInputNameId="estado"
+                        label="Estado" 
+                        type="text"
+                        disabled
+                    />
                 </div>
             </section>
             
-            <section className='formulario-informacoes-responsavel'>
+            <section className='formulario-section'>
                 <SubtituloH3>Informações do responsável</SubtituloH3>
 
-                <div className='fomulario-group-form'>
-                    <label htmlFor="nomeResponsavel">Nome do responsável</label>
-                    <GroupInput
-                        nameInput="nomeResponsavel" 
-                        inputType="text"
-                    />
-                    <span className='span-info-formulario'>Principal responsável legal e contato de emergência</span>
-                </div>
+                <Inputs
+                    labelForInputNameId="nomeResponsavel"
+                    label="Nome do responsável" 
+                    type="text"
+                    placeholder="Digite o nome do responsável..."
+                    message="Principal responsável legal e contato de emergência"
+                />
 
-                <div className='fomulario-group-form'>
-                    <label htmlFor="telefone">Telefone</label>
-                    <GroupInput
-                        nameInput="telefone" 
-                        inputType="text"
-                    />
-                </div>
+                <Inputs
+                    labelForInputNameId="telefone"
+                    label="Telefone" 
+                    type="text"
+                    placeholder="(00) 00000-0000"
+                />
 
-                <div className='fomulario-group-form'>
-                    <label htmlFor="email">E-mail</label>
-                    <GroupInput
-                        nameInput="email" 
-                        inputType="text"
-                    />
-                </div>
+                <Inputs
+                    labelForInputNameId="email"
+                    label="E-mail" 
+                    type="text"
+                    placeholder="Digite o seu email..."
+                />
             </section>
 
-            <section className='formulario-opcoes-matricula'>
+            <section className='formulario-section '>
                 <SubtituloH3>Opções de matrícula</SubtituloH3>
                 <div className='fomulario-group-form-cards'>
                     <label htmlFor="turno">Selecione o turno de estudo</label>

@@ -2,12 +2,31 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1rem;
 }
 
-.cards {
-    width: 50%;
+.card-turno-content {
+    position: relative;
+    width: 256px;
+}
+
+.card-turno-content > input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: none;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.card-turno {
     padding: 32px 16px 16px 16px;
     position: relative;
     display: flex;
@@ -19,35 +38,38 @@
     border-radius: 8px;
 }
 
-.cards > input {
+.radio-turno {
     position: absolute;
-    top: 9.25px;
-    left: 9.25px;
-    cursor: pointer;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
     width: 24px;
     height: 24px;
-    font-size: 1rem;
-    z-index: 2;
-    opacity: 0;
-}
-
-.div-radio {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    top: 9.25px;
-    left: 9.25px;
     background: url('../../assets/img/circle.svg') no-repeat;
 }
 
-.cards > input:checked + .div-radio {
-    background: url('../../assets/img/checkmark-circle-01.svg') no-repeat;
+.card-turno > img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
 }
 
-.cards > input:checked + .cards {
-    border: 1px solid var(--color-brand-mid);
+.card-turno > span {
+    font-size: 1rem;
 }
 
-.check-div-radio {
+.card-turno-content > input:hover + .card-turno .radio-turno {
+    background: url('../../assets/img/circle-hover.svg') no-repeat;
+}
+
+.card-turno-content > input:hover + .card-turno {
+    border: 1px solid var(--color-stroke-highlight);
+}
+
+.card-turno-content > input:checked + .card-turno {
     border: 2px solid var(--color-brand-mid);
+}
+
+.card-turno-content > input:checked + .card-turno .radio-turno {
+    background: url('../../assets/img/checkmark-circle-01.svg') no-repeat;
 }

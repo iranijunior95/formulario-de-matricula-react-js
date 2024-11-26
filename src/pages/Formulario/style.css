@@ -47,129 +47,21 @@
     color: var(--color-text-secondary);
 }
 
-.formulario-info-crianca {
+.formulario-section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.fomulario-group-form {
-    width: 100%;
+.formulario-section-inline {
     display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.fomulario-group-form > label {
-    font-size: 0.875rem;
-    color: var(--color-text-secondary);
-    font-weight: 500;
-}
-
-.fomulario-group-form .span-info-formulario {
-    font-size: 0.875rem;
-    color: #78716C;
-    font-weight: 400;
-}
-
-.fomulario-group-form > select {
-    appearance: none;
-    background: url('../../assets/img/arrow-down-01.svg') no-repeat var(--color-surface-primary);
-    background-position: calc(100% - 16px) center;
-    padding: 12px 16px;
-    border: 1px solid var(--color-stroke-default);
-    border-radius: 8px;
-    font-size: 1rem;
-    color: var(--color-text-primary);
-    outline: none;
-    cursor: pointer;
-}
-
-.fomulario-group-form > select:focus {
-    border: 1px solid var(--color-stroke-highlight);
-    box-shadow: 0px 0px 4px 3px rgb(254, 231, 214);
-}
-
-.fomulario-group-form > select > option {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    font-weight: 400;
-}
-
-.fomulario-group-form > textarea {
-    background: var(--color-surface-primary);
-    padding: 12px 16px;
-    border: 1px solid var(--color-stroke-default);
-    border-radius: 8px;
-    font-size: 1rem;
-    color: var(--color-text-primary);
-    outline: none;
-}
-
-.fomulario-group-form > textarea:focus {
-    border: 1px solid var(--color-stroke-highlight);
-    box-shadow: 0px 0px 4px 3px rgb(254, 231, 214);
-}
-
-.span-input-file {
-    font-size: 0.875rem;
-    color: var(--color-text-secondary);
-    font-weight: 500;
-}
-
-.label-input-file {
-    height: 160px;
-    padding: 24px 16px;
-    border: 1px dashed var(--color-stroke-default);
-    border-radius: 8px;
-    cursor: pointer;
-    background: url('../../assets/img/cloud-upload.svg') no-repeat;
-    background-position: center 34px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.label-input-file::after {
-    content: 'Clique aqui para selecionar arquivos';
-    margin-top: calc(84px - 24px);
-    font-size: 1rem;
-    font-weight: 400;
-    color: #A8A29E;
-    max-width: 20ch;
-    text-align: center;
-}
-
-.input-file {
-    display: none;
-}
-
-.formulario-endereco-residencial {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.div-formulario-endereco {
-    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
 }
 
-.div-formulario-endereco > div:nth-child(2) {
+.formulario-section-inline > div:nth-child(2) {
     width: 20%;
-}
-
-.formulario-informacoes-responsavel {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.formulario-opcoes-matricula {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
 }
 
 .fomulario-group-form-cards {

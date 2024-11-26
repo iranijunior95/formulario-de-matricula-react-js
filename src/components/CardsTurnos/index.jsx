@@ -4,38 +4,42 @@ import { useState } from 'react';
 import './style.css';
 
 function CardsTurnos() {
-    const [radio, setRadio] = useState('manhã');
+    const [radio, setRadio] = useState('manha');
 
     return (
         <div className='cards-radios'>
-            <div className={radio === 'manhã' ? 'cards check-div-radio' : 'cards'}>
+            <div className='card-turno-content'>
                 <input 
                     type="radio" 
-                    id="manha" 
-                    name="horario" 
-                    value="manhã"
-                    checked={radio === 'manhã'}
-                    onChange={(event) => setRadio(event.target.value)}
+                    name="turno" 
+                    id="manha"
+                    value="manha"
+                    checked={radio === 'manha'}
+                    onChange={(event) => setRadio(event.target.value)} 
                 />
 
-                <div className='div-radio'></div>
-                <img src={Cloud02} alt="cloud 02" />
-                <span>Manhã</span>
+                <div className='card-turno'>
+                    <div className='radio-turno'></div>
+                    <img src={Cloud02} alt="cloud 02" />
+                    <span>Manhã</span>
+                </div>
             </div>
 
-            <div className={radio === 'tarde' ? 'cards check-div-radio' : 'cards'}>
+            <div className='card-turno-content'>
                 <input 
                     type="radio" 
-                    id="tarde" 
-                    name="horario" 
+                    name="turno" 
+                    id="tarde"
                     value="tarde"
                     checked={radio === 'tarde'}
-                    onChange={(event) => setRadio(event.target.value)}
+                    onChange={(event) => setRadio(event.target.value)} 
                 />
 
-                <div className='div-radio'></div>
-                <img src={Sun02} alt="sun 02" />
-                <span>Tarde</span>
+                <div className='card-turno'>
+                    <div className='radio-turno'></div>
+                    <img src={Sun02} alt="sun 02" />
+                    <span>Tarde</span>
+                </div>
             </div>
         </div>
     );
