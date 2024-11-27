@@ -45,12 +45,30 @@ function Formulario() {
             turno,
             esporte,
             termos
-        }]);
-
-        
+        }]);        
     }
 
-    console.log(listaDados)
+    async function buscarCep() {
+        if(!cep.trim()) {
+            return;
+        }
+
+        const cleanCep = cep.replace('-', '');
+        
+        try {
+            const response = await fetch(`https://viacep.com.br/ws/${cleanCep}/json/`);
+            const dados = await response.json();
+
+            if(dados.erro) {
+                return;
+            }
+
+            setCidade(dados.localidade);
+            setEstado(dados.uf);
+        } catch (error) {
+            console.log('erro: '+error);
+        }
+    }
 
     return (
         <div className='formulario'>
@@ -130,6 +148,7 @@ function Formulario() {
                     formato="cep"
                     value={cep}
                     onChange={(event) => setCep(event.target.value)}
+                    onBlur={() => buscarCep()}
                 />
 
                 <div className='formulario-section-inline'>

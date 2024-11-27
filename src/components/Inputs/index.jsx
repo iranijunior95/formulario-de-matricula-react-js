@@ -57,6 +57,7 @@ function Inputs(props) {
                             disabled={props.disabled ? true : false}
                             value={props.value}
                             onChange={props.onChange}
+                            onBlur={props.onBlur}
                         />
                         {validSpanMenssagem(props.error, props.message)}
                     </div> 
