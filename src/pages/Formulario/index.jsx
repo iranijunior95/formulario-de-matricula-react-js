@@ -127,6 +127,7 @@ function Formulario() {
                     label="CEP" 
                     type="text"
                     placeholder="Digite o cep da sua região..."
+                    formato="cep"
                     value={cep}
                     onChange={(event) => setCep(event.target.value)}
                 />
@@ -187,6 +188,7 @@ function Formulario() {
                     label="Telefone" 
                     type="text"
                     placeholder="(00) 00000-0000"
+                    formato="telefone"
                     value={telefone}
                     onChange={(event) => setTelefone(event.target.value)}
                 />

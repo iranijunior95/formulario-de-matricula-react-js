@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import IconAlert from '../../assets/img/alert-circle.svg';
 import IconFile from '../../assets/img/file-01-stroke-rounded.svg';
+import { PatternFormat } from "react-number-format";
 import './style.css';
 
 function Inputs(props) {
@@ -26,6 +27,42 @@ function Inputs(props) {
 
     switch (props.type) {
         case 'text':
+            if(props.formato === 'telefone') {
+                return (
+                    <div className={validaClassNameInput(props.disabled, props.error)}>
+                        <label htmlFor={props.labelForInputNameId}>{props.label}</label>
+                        <PatternFormat 
+                            type="text" 
+                            name={props.labelForInputNameId} 
+                            id={props.labelForInputNameId}
+                            placeholder={props.placeholder ? props.placeholder : ''}
+                            format="+55 (##) # #### ####"
+                            disabled={props.disabled ? true : false}
+                            value={props.value}
+                            onChange={props.onChange}
+                        />
+                        {validSpanMenssagem(props.error, props.message)}
+                    </div> 
+                );
+            }else if(props.formato === 'cep') {
+                return (
+                    <div className={validaClassNameInput(props.disabled, props.error)}>
+                        <label htmlFor={props.labelForInputNameId}>{props.label}</label>
+                        <PatternFormat 
+                            type="text" 
+                            name={props.labelForInputNameId} 
+                            id={props.labelForInputNameId}
+                            placeholder={props.placeholder ? props.placeholder : ''}
+                            format="#####-###"
+                            disabled={props.disabled ? true : false}
+                            value={props.value}
+                            onChange={props.onChange}
+                        />
+                        {validSpanMenssagem(props.error, props.message)}
+                    </div> 
+                );
+            }
+
             return (
                 <div className={validaClassNameInput(props.disabled, props.error)}>
                     <label htmlFor={props.labelForInputNameId}>{props.label}</label>
