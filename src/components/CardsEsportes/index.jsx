@@ -4,16 +4,9 @@ import Natacao from '../../assets/img/swimming.svg';
 import Yoga from '../../assets/img/yoga-02.svg';
 import Volley from '../../assets/img/volleyball.svg';
 import Boxe from '../../assets/img/boxing-glove-01.svg';
-import { useEffect, useState } from 'react';
 import './style.css';
 
-function CardsEsportes(props) {
-    const [esportes, setEsportes] = useState('futebol');
-
-    useEffect(() => {
-        props.recebeEsporte(esportes);
-    }, [esportes]);
-
+function CardsEsportes({ register, estadoEsporte }) {
     return (
         <div className='radio-cards-esportes'>
             <div className='card-esportes-content'>
@@ -21,9 +14,9 @@ function CardsEsportes(props) {
                     type="radio" 
                     name="esporte" 
                     id="futebol" 
-                    value="futebol" 
-                    checked={esportes === 'futebol'}
-                    onChange={(event) => setEsportes(event.target.value)}
+                    value="futebol"
+                    checked={estadoEsporte === 'futebol' ? true : false}
+                    {...register('esporte')} 
                 />
 
                 <div className='card-esporte'>
@@ -39,8 +32,8 @@ function CardsEsportes(props) {
                     name="esporte" 
                     id="basquete" 
                     value="basquete"
-                    checked={esportes === 'basquete'}
-                    onChange={(event) => setEsportes(event.target.value)} 
+                    checked={estadoEsporte === 'basquete' ? true : false}
+                    {...register('esporte')} 
                 />
 
                 <div className='card-esporte'>
@@ -56,8 +49,8 @@ function CardsEsportes(props) {
                     name="esporte" 
                     id="natacao" 
                     value="natacao"
-                    checked={esportes === 'natacao'}
-                    onChange={(event) => setEsportes(event.target.value)} 
+                    checked={estadoEsporte === 'natacao' ? true : false}
+                    {...register('esporte')} 
                 />
 
                 <div className='card-esporte'>
@@ -73,8 +66,8 @@ function CardsEsportes(props) {
                     name="esporte" 
                     id="yoga" 
                     value="yoga"
-                    checked={esportes === 'yoga'}
-                    onChange={(event) => setEsportes(event.target.value)} 
+                    checked={estadoEsporte === 'yoga' ? true : false}
+                    {...register('esporte')} 
                 />
 
                 <div className='card-esporte'>
@@ -89,9 +82,9 @@ function CardsEsportes(props) {
                     type="radio" 
                     name="esporte" 
                     id="volley" 
-                    value="volley" 
-                    checked={esportes === 'volley'}
-                    onChange={(event) => setEsportes(event.target.value)}
+                    value="volley"
+                    checked={estadoEsporte === 'volley' ? true : false}
+                    {...register('esporte')}  
                 />
 
                 <div className='card-esporte'>
@@ -107,8 +100,8 @@ function CardsEsportes(props) {
                     name="esporte" 
                     id="boxe" 
                     value="boxe"
-                    checked={esportes === 'boxe'} 
-                    onChange={(event) => setEsportes(event.target.value)}
+                    checked={estadoEsporte === 'boxe' ? true : false}
+                    {...register('esporte')} 
                 />
 
                 <div className='card-esporte'>

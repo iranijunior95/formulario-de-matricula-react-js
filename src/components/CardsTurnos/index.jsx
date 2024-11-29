@@ -1,11 +1,8 @@
 import Cloud02 from '../../assets/img/sun-cloud-02.svg';
 import Sun02 from '../../assets/img/sun-02.svg';
-import { useState } from 'react';
 import './style.css';
 
-function CardsTurnos(props) {
-    const [radio, setRadio] = useState('manha');
-
+function CardsTurnos({ register, estadoTurno }) {
     return (
         <div className='cards-radios'>
             <div className='card-turno-content'>
@@ -14,11 +11,8 @@ function CardsTurnos(props) {
                     name="turno" 
                     id="manha"
                     value="manha"
-                    checked={radio === 'manha'}
-                    onChange={(event) => {
-                        setRadio(event.target.value);
-                        props.recebeTurno(event.target.value);
-                    }} 
+                    checked={estadoTurno === 'manha' ? true : false}
+                    {...register('turno')}  
                 />
 
                 <div className='card-turno'>
@@ -34,11 +28,8 @@ function CardsTurnos(props) {
                     name="turno" 
                     id="tarde"
                     value="tarde"
-                    checked={radio === 'tarde'}
-                    onChange={(event) => {
-                        setRadio(event.target.value);
-                        props.recebeTurno(event.target.value);
-                    }}  
+                    checked={estadoTurno === 'tarde' ? true : false}
+                    {...register('turno')} 
                 />
 
                 <div className='card-turno'>
