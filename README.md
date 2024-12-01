@@ -19,5 +19,19 @@
 2 - Tela do formulario sendo preenchido:
 
 <p align="center">
-  <video src='./src/assets/midia-readme/midia-video.webm' />
+  <img alt="formulario" title="#formulario" src="./src/assets/midia-readme/formulario-gif.gif">
 </p>
+
+### 🛠 Tecnologias
+
+- As seguintes ferramentas foram usadas na construção do projeto:
+
+- HTML
+- CSS
+- JAVASCRIPT (React Js, React-hook-form, yup)
+
+### 📝 Licença
+
+- Fique a vontade para contribuir...
+
+- Feito com ❤️ por Irani Junior 👋🏽
