@@ -1,8 +1,23 @@
-# React + Vite
+# Formulario de Matrícula - React JS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 💻 Sobre o projeto
 
-Currently, two official plugins are available:
+- Esse projeto foi desenvolvido para praticar o básico de React Js com foco na validação de formulários usando react-hook-form e yup.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- O design do projeto foi inspirado em um modelo disponível gratuitamente no Figma.
+
+### 🎨 Layout
+
+- A baixo o design da aplicação em execução.
+
+1 - Tela inicial:
+
+<p align="center">
+  <img alt="telaInicial" title="#telaInicial" src="./src/assets/midia-readme/midia-imagem.png">
+</p>
+
+2 - Tela do formulario sendo preenchido:
+
+<p align="center">
+  <video src='./src/assets/midia-readme/midia-video.webm' />
+</p>
