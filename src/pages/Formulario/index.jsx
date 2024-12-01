@@ -49,15 +49,29 @@ function Formulario() {
         .oneOf([true], 'Preencha o campo termos de uso...')
     });
 
-    const { register, handleSubmit, watch, setValue, getValues, setError ,formState: { errors } } = useForm({
+    const { register, 
+            handleSubmit, 
+            watch, 
+            setValue, 
+            getValues, 
+            setError, 
+            formState: { errors } 
+        } = useForm({
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data, evento) => {
+        if(evento.target.innerText === 'Fazer matrícula') {
+            alert(`Vai serguir para fazer a matricula: ${JSON.stringify(data)}`);
+        }else {
+            alert(`Salvar os dados: ${JSON.stringify(data)}`);
+        }
+    };
 
     const [ estadoCep, setEstadoCep ] = useState(false);
     const [ estadoTurno, setEstadoTurno ] = useState('manha');
     const [ estadoEsporte, setEstadoEsporte ] = useState('futebol');
+    const [ estadoFile, setEstadoFile ] = useState('');
 
     const cepValue = watch('cep');
     const telefoneValue = watch('telefone');
@@ -200,9 +214,20 @@ function Formulario() {
                             id="certidaoNascimento"
                             name="certidaoNascimento"
                             className='input-file'
-                            {...register('certidaoNascimento')}
+                            {...register('certidaoNascimento', {
+                                onChange: (event) => {
+                                    if(event.target.files.length === 0) {
+                                        setEstadoFile('');
+                                    }else {
+                                        setEstadoFile(event.target.files[0].name);
+                                        
+                                    } 
+                                }
+                            })}
                         />
-                        {errors.certidaoNascimento && (<span role="alert"><img src={IconAlert} alt="icone alert" /> {errors.certidaoNascimento.message}</span>)}
+                        {errors.certidaoNascimento === undefined & estadoFile === '' ? null : null}
+                        {errors.certidaoNascimento !== undefined & estadoFile === '' ? (<span role="alert"><img src={IconAlert} alt="icone alert" /> {errors.certidaoNascimento.message}</span>) : null}
+                        {errors.certidaoNascimento === undefined & estadoFile !== '' || errors.certidaoNascimento !== undefined & estadoFile !== '' ? (<p>{estadoFile}</p>) : null}
                     </div>
                 </section>
 
@@ -334,25 +359,32 @@ function Formulario() {
                     </div>
                 </section>
 
-                <section className='check-termos-servicos'>
-                    <input 
-                        type="checkbox" 
-                        name="termosUso" 
-                        id="termosUso"
-                        {...register('termosUso')}
-                    />
-                    <div className='checkbox'></div>
-                    <label htmlFor="termosUso">Declaro que li e concordo com os <span>Termos e Condições</span> e com a <span>Política de Privacidade</span> da escola Estrela do Amanhã.</label>
+                <section className={errors.termosUso ? 'check-termos-servicos input-error' : 'check-termos-servicos'}>
+                    <div className='check-container'>
+                        <input 
+                            type="checkbox" 
+                            name="termosUso" 
+                            id="termosUso"
+                            {...register('termosUso')}
+                        />
+                        <div className='checkbox'></div>
+                        <label htmlFor="termosUso">Declaro que li e concordo com os <span>Termos e Condições</span> e com a <span>Política de Privacidade</span> da escola Estrela do Amanhã.</label>
+                    </div>
+                    {errors.termosUso && (<span role="alert"><img src={IconAlert} alt="icone alert" /> {errors.termosUso.message}</span>)}
                 </section>
 
                 <section className='formulario-buttons'>
-                    <button type="button" className='btn-default btn-salvar'>Salvar respostas</button>
+                    <button 
+                        type="button" 
+                        className='btn-default btn-salvar'
+                        onClick={(event) => handleSubmit(onSubmit)(event)}
+                    >Salvar respostas</button>
+                    
                     <button 
                         type="button" 
                         className='btn-default btn-matricula'
-                        onClick={() => handleSubmit(onSubmit)()}
-                    >Fazer matrícula
-                    </button>
+                        onClick={(event) => handleSubmit(onSubmit)(event)}
+                    >Fazer matrícula</button>
                 </section>
             </div>
         </form>

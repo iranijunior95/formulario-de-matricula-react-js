@@ -141,7 +141,7 @@ form {
     box-shadow: 0px 0px 4px 3px rgb(254, 231, 214);
 }
 
-.div-input-component > span {
+.div-input-component > p {
     font-size: 0.875rem;
     font-weight: 400;
     color: #78716C;
@@ -271,13 +271,32 @@ form {
 }
 
 .check-termos-servicos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.check-termos-servicos.input-error > span {
+    display: flex;
+    gap: 4px;
+    font-size: 0.875rem;
+    color: var(--color-semantic-error);
+}
+
+.check-termos-servicos.input-error > span > img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.check-termos-servicos .check-container {
     width: 100%;
     display: flex;
     gap: 12px;
     position: relative;
 }
 
-.check-termos-servicos > input {
+.check-container > input {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -286,27 +305,27 @@ form {
     cursor: pointer;
 }
 
-.check-termos-servicos .checkbox {
+.check-container .checkbox {
     min-width: 24px;
     height: 24px;
     background: url('../../assets/img/square.svg') no-repeat;
 }
 
-.check-termos-servicos > input:hover + .checkbox {
+.check-container > input:hover + .checkbox {
     background: url('../../assets/img/square-hover.svg') no-repeat;
 }
 
-.check-termos-servicos > input:checked + .checkbox {
+.check-container > input:checked + .checkbox {
     background: url('../../assets/img/checkmark-square-01.svg') no-repeat;
 }
 
-.check-termos-servicos > label {
+.check-container > label {
     font-size: 1rem;
     font-weight: 400;
     color: var(--color-text-secondary);
 }
 
-.check-termos-servicos > label > span {
+.check-container > label > span {
     color: var(--color-brand-dark);
     font-weight: 500;
 }
