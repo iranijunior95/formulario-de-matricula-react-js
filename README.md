@@ -6,6 +6,8 @@
 
 - O design do projeto foi inspirado em um modelo disponível gratuitamente no Figma.
 
+- [https://formulario-de-matricula-react-js.vercel.app](https://formulario-de-matricula-react-js.vercel.app)
+
 ### 🎨 Layout
 
 - A baixo o design da aplicação em execução.
@@ -21,6 +23,10 @@
 <p align="center">
   <img alt="formulario" title="#formulario" src="./src/assets/midia-readme/formulario-gif.gif">
 </p>
+
+3 - Acesse a aplicação online:
+
+[https://formulario-de-matricula-react-js.vercel.app](https://formulario-de-matricula-react-js.vercel.app)
 
 ### 🛠 Tecnologias
 
