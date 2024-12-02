@@ -364,13 +364,13 @@ form {
 }
 
 @media screen and (max-width: 940px) {
-    .formulario {
+    form {
         width: 90%;
     }
 }
 
 @media screen and (max-width: 680px) {
-    .formulario {
+    form {
         width: 100%;
     }
 
@@ -386,6 +386,10 @@ form {
 }
 
 @media screen and (max-width: 510px) {
+    .formulario {
+        padding: 4rem 2rem;
+    }
+
     .check-termos-servicos > label {
         text-align: justify;
     }
